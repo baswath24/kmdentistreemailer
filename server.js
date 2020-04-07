@@ -48,6 +48,7 @@ app.post('/form', async(req,res)=>{
     const a = await send_mail(req.body);
     console.log("after sending ", a);
     res.json(a);
+    res.header("Access-Control-Allow-Origin", "kmdentistree.herokuapp.com")
 });
 
 app.listen(process.env.PORT || 3000, ()=>{console.log("running on 3000");})
