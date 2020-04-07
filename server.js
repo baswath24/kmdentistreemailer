@@ -1,13 +1,15 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 const nodemailer = require('nodemailer');
 const app = express();
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-
+const corsOptions = {
+    origin: 'https://kmdentistree.herokuapp.com'
+}
 async function wrapped_send_mail(data) {
     return new Promise((resolve, reject)=>{
         let transporter = nodemailer.createTransport({
@@ -44,7 +46,7 @@ send_mail = async(data) => {
     let response = await wrapped_send_mail(data);
     return response;
 }
-app.post('/form', async(req,res)=>{
+app.post('/form',cors(corsOptions), async(req,res)=>{
     const a = await send_mail(req.body);
     console.log("after sending ", a);
     res.json(a);
