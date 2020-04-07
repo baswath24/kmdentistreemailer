@@ -50,6 +50,9 @@ app.post('/form', async(req,res)=>{
     res.json(a);
     res.header("Access-Control-Allow-Origin", "*")
 });
+app.post('/', async(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "*")
+});
 
 app.listen(process.env.PORT || 3000, ()=>{console.log("running on 3000");})
 
