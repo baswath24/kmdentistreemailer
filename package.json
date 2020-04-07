@@ -1,7 +1,6 @@
 {
-  "name": "backend",
+  "name": "kmdentistreemailer",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,8 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemailer-smtp-transport": "^2.7.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baswath24/kmdentistreemailer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baswath24/kmdentistreemailer/issues"
+  },
+  "homepage": "https://github.com/baswath24/kmdentistreemailer#readme",
+  "description": ""
 }

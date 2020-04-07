@@ -1,10 +1,10 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const nodemailer = require('nodemailer');
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -48,11 +48,11 @@ app.post('/form', async(req,res)=>{
     const a = await send_mail(req.body);
     console.log("after sending ", a);
     res.json(a);
-    res.header("Access-Control-Allow-Origin", "*")
+    // res.header("Access-Control-Allow-Origin", "*")
 });
-app.post('/', async(req,res)=>{
-    res.header("Access-Control-Allow-Origin", "*")
-});
+// app.post('/', async(req,res)=>{
+    // res.header("Access-Control-Allow-Origin", "*")
+// });
 
 app.listen(process.env.PORT || 3000, ()=>{console.log("running on 3000");})
 
